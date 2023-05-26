@@ -6,12 +6,22 @@ function Tarjetas() {
     const [tarjetas, setTarjetas] = useState([]);
     const [tarjetaDetalle, setTarjetaDetalle] = useState([]);
 
-    const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState(null);
-    const [id, setId] = useState(0);
+    const handleRowClick = async (id) => {
+        try{
+            const response = await fetch(`http://localhost:3001/cafes/${id}`, {
+                mode: 'cors',
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            });
 
-    const handleRowClick = (tarjeta) => {
-        setTarjetaSeleccionada(tarjeta);
-        setId(tarjeta.id);
+            if (response.ok) {
+                const data = await response.json();
+                setTarjetaDetalle(data);
+            }
+
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     useEffect(() => {
@@ -21,15 +31,6 @@ function Tarjetas() {
                 setTarjetas(data);
             });
     }, [])
-
-    useEffect(() => {
-        fetch(`http://localhost:3001/cafes/${id}`) 
-            .then(res => res.json())
-            .then(data => {
-                setTarjetaDetalle(data);
-            });
-    }, [])
-
 
     return (
         <div>
@@ -51,7 +52,7 @@ function Tarjetas() {
                         </thead>
                         <tbody>
                             {tarjetas.map((tarj) => (
-                                <tr key={tarj.id} onClick={() => handleRowClick(tarj)}>
+                                <tr key={tarj.id} onClick={() => handleRowClick(tarj.id)}>
                                     <td>{tarj.id}</td>
                                     <td>{tarj.nombre}</td>
                                     <td>{tarj.tipo}</td>
@@ -62,10 +63,7 @@ function Tarjetas() {
                     </table>
                 </div>
                 <div className="descripcion-seccion">
-                    {tarjetaSeleccionada ? (
-                        <Detalle tarjetaSeleccionada={tarjetaDetalle} />
-                        ) : (
-                        <p></p>)}
+                    {tarjetaDetalle && <Detalle tarjetaSeleccionada={tarjetaDetalle} />}
                 </div>
             </div>
         </div>

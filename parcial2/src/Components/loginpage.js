@@ -1,5 +1,5 @@
 import './login.css';
-// import { postData } from "../utils/requests";
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 function LoginPage() {
@@ -7,6 +7,7 @@ function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     function loginCb(data) {
         localStorage.setItem('token', data.token);
@@ -22,20 +23,28 @@ function LoginPage() {
             return;
         }
 
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters");
-            return;
-        }
-
-        if ((email.includes('@') === false) && (email.includes('.com') === false)) {
-            setError("Email must be valid");
-            return;
-        }
-
         console.log("email: " + email);
         console.log("password: " + password);
 
         setError('');
+
+        fetch('http://localhost:3001/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    login: email,
+                    password: password,
+                    })
+                }).then(res => res.json()).then(data => {
+                    if (data.status === 'success') {
+                        navigate('/cafes');
+                    }
+                    if (data.status === 'error') {
+                        setError(data.message);
+                    }
+                });
     }
 
     function handleCancel() {

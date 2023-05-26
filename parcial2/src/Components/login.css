@@ -164,7 +164,23 @@ header h3{
 }
 
 .imagen-cafe {
-    width: 50%;
+    width: 30%;
     height: auto;
+}
+
+.container-coffee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    flex-direction: column;
+    margin-right: 20px;
+    border : 1px solid black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container-coffee h3 {
+    font-size: 27px;
+    font-weight: bold;
 }
   
