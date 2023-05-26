@@ -1,3 +1,5 @@
+import { FormattedDate, FormattedMessage } from "react-intl";
+
 function Detalle({tarjetaSeleccionada}){
 
     if (!tarjetaSeleccionada){
@@ -9,11 +11,14 @@ function Detalle({tarjetaSeleccionada}){
     return(
         <div className="container-coffee">
             <h3>{tarjetaSeleccionada.nombre}</h3>
-            <p>{tarjetaSeleccionada.fecha_cultivo}</p>
-            <img className='imagen-cafe' src={tarjetaSeleccionada.imagen} alt='cafe'></img>
-            <p>Notas</p>
+            <p><FormattedDate value={tarjetaSeleccionada.fecha_cultivo}
+                    year="numeric"
+                    month="long"
+                    day="numeric"/></p>
+            <img className='imagen-cafe' src={tarjetaSeleccionada.imagen} alt='coffee'></img>
+            <p><FormattedMessage id="notes"/></p>
             <p>{tarjetaSeleccionada.notas}</p>
-            <h3>Cultivado a una altura de {tarjetaSeleccionada.altura}msnm</h3>
+            <h3><FormattedMessage id="height_text"/> {tarjetaSeleccionada.altura}<FormattedMessage id="level"/></h3>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Detalle from "./detalle";
+import { FormattedMessage } from "react-intl";
 
 function Tarjetas() {
 
@@ -34,8 +35,8 @@ function Tarjetas() {
 
     return (
         <div>
-            <header className='hola'>
-                <h3>El aroma mágico</h3>
+            <header>
+                <h3><FormattedMessage id="title"/></h3>
                 <hr></hr>
                 <img src='https://cdn.discordapp.com/attachments/1023419960363581492/1111644735304638556/image.png' alt='libro'></img>
             </header>
@@ -45,9 +46,9 @@ function Tarjetas() {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nombre</th>
-                                <th>Tipo</th>
-                                <th>Region</th>
+                                <th><FormattedMessage id="name"/></th>
+                                <th><FormattedMessage id="type"/></th>
+                                <th><FormattedMessage id="region"/></th>
                             </tr>
                         </thead>
                         <tbody>
