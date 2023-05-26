@@ -35,11 +35,6 @@ function Tarjetas() {
 
     return (
         <div>
-            <header>
-                <h3><FormattedMessage id="title"/></h3>
-                <hr></hr>
-                <img src='https://cdn.discordapp.com/attachments/1023419960363581492/1111644735304638556/image.png' alt='libro'></img>
-            </header>
             <div className="body-container">
                 <div className="tarjeta-container">
                     <table className="custom-table">

@@ -1,4 +1,4 @@
-import './extras/App.css';
+import './extras/Custom.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { FormattedMessage } from 'react-intl';
@@ -9,14 +9,6 @@ function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-    function loginCb(data) {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('username', data.username);
-        console.log(`User ${data.username} logged in successfully`);
-        console.log(data);
-        window.location.href = '/';
-    }
 
     function handleLogin() {
         if (!email || !password) {
@@ -55,11 +47,6 @@ function LoginPage() {
 
     return (
         <div>
-            <header>
-                <h3><FormattedMessage id="title"/></h3>
-                <hr></hr>
-                <img src='https://cdn.discordapp.com/attachments/1023419960363581492/1111644735304638556/image.png' alt='book'></img>
-            </header>
             <div className='body-container-login'>
                 <p><FormattedMessage id="title_log"/></p>
                 <div className="card">

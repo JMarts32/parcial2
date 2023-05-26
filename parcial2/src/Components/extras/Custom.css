@@ -14,7 +14,7 @@
     align-items: center;
     width: 400px;
     padding: 20px;
-    border: 0px solid #ccc;
+    border: 2px solid black;
     border-radius: 1px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     background-color: rgb(236, 172, 172);
@@ -135,7 +135,7 @@ header img{
 
 header h3{
     text-align: left;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 20px;
     color: black;
     margin-bottom: 15px;
@@ -178,6 +178,8 @@ header h3{
     background-color: antiquewhite;
     flex-direction: column;
     margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     border : 1px solid black;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
