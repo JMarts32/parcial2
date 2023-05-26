@@ -3,13 +3,15 @@ import './App.css';
 import React from 'react';
 
 import LoginPage from './Components/loginpage';
+import Tarjetas from './Components/tarjetas';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<LoginPage />} />
+          <Route path='/cafes' element={<Tarjetas />} />
         </Routes>
       </BrowserRouter>
     </div>
