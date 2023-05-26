@@ -1,0 +1,170 @@
+.body-container-login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    border: 0px solid #ccc;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: rgb(236, 172, 172);
+}
+
+.image-container img {
+    max-width: 40%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.form-container {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.btn1 {
+    padding: 10px 20px;
+    background-color: rgb(14, 129, 14);
+    color: black;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn2 {
+    padding: 10px 20px;
+    background-color: rgb(253, 43, 43);
+    color: black;
+    border: none;
+    margin-left: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.form-text {
+    color: lightgray;
+    font-size: 12px;
+}
+
+.image-text {
+    color: #ffff;
+    font-size: 27px;
+    margin-top: 40px;
+    font-weight: normal;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: medium;
+}
+
+  
+.body-container {
+    display: grid;
+    grid-template-columns: 66% 33%;
+}
+
+.tarjeta-container {
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+}
+
+.descripcion-container {
+    grid-row: inherit;
+}
+  
+.tarjeta {
+    border: 1px solid #ccc;
+}
+
+header img{
+    width: 100%;
+    height: 300px;
+}
+
+header h3{
+    text-align: left;
+    margin-left: 20px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.custom-table {
+    width: 800px;
+    border-collapse: collapse;
+    /* Add more custom styles as needed */
+}
+  
+.custom-table th{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid grey;
+}
+.custom-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid grey;
+}
+
+.custom-table th {
+    background-color: grey;
+    color: white;
+}
+
+.imagen-cafe {
+    width: 50%;
+    height: auto;
+}
+  
